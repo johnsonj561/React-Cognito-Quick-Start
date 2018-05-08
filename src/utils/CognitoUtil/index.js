@@ -27,8 +27,8 @@ export function CognitoAuthorizer() {
   this.cognitoUser = false;
   this.session = false;
   this.sessionInterval = false;
-  this.sessionIntervalMs = 5 * 1000;
-  this.expWarningSeconds = 3560;
+  this.sessionIntervalMs = 60 * 1000;
+  this.expWarningSeconds = 120;
   // authHelper provided by amazon-cognito-auth.js
   // provides some useful functionality we will reuse
   this.authHelper = new CognitoAuth(authCredentials);
