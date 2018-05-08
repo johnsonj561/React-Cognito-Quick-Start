@@ -1,0 +1,11 @@
+.leftItem {
+  width: 60%; }
+
+.rightItem {
+  width: 40%; }
+
+@media (max-width: 600px) {
+  .leftItem {
+    display: none; }
+  .rightItem {
+    width: 100%; } }

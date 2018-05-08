@@ -1,0 +1,37 @@
+
+.dialog-content {
+  padding: 25px !important;
+  overflow-y: initial !important;
+}
+
+.email-btn-container {
+margin-top: 15px !important;
+}
+
+.login-form-btn {
+  margin: 10px 0px !important;
+};
+
+@media(max-height: 650px) {
+  .dialog-content {
+    padding: 15px 20px !important;
+  }
+  .email-btn-container {
+    margin-top: 10px !important;
+  }
+  .login-form-btn {
+    margin: 7px 0px !important;
+  }
+}
+
+@media(max-height: 550px) {
+  .dialog-content {
+    padding: 10px 15px !important;
+  }
+  .email-btn-container {
+    margin-top: 5px !important;
+  }
+  .login-form-btn {
+    margin: 4px 0px !important;
+  }
+}

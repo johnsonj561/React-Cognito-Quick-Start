@@ -1,0 +1,7 @@
+// REDUX PLACEHOLDERS - MERELY EXAMPLES
+
+export const GET_TODOS = 'GET_TODOS';
+export const POST_TODO = 'POST_TODO';
+
+export const INC_COUNTER = 'INC_COUNTER';
+export const DEC_COUNTER = 'DEC_COUNTER';

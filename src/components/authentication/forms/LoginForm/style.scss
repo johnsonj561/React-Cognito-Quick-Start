@@ -1,0 +1,41 @@
+
+.dialog-content {
+  padding: 25px !important;
+  overflow-y: initial !important;
+}
+
+.social-btn-container, .email-btn-container {
+  margin-top: 15px !important;
+}
+
+.login-form-btn {
+  margin: 10px 0px !important;
+};
+
+.forgot-password {
+  cursor: pointer;
+  color: #337ab7;
+  display: block;
+  width: 100%;
+  padding: 10px 0px;
+}
+
+.error-span {
+  color: #F44336;
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 10px 0px;
+}
+
+@media(max-height: 650px) {
+  .dialog-content {
+    padding: 15px 20px !important;
+  }
+  .social-btn-container, .email-btn-container {
+    margin-top: 10px !important;
+  }
+  .login-form-btn {
+    margin: 7px 0px !important;
+  }
+}
