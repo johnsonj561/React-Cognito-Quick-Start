@@ -39,7 +39,6 @@ class HomePage extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log('home page props', nextProps);
     const { todoList } = nextProps;
     if (this.props.todoList !== todoList) {
       const { orderBy, sortType } = this.state;

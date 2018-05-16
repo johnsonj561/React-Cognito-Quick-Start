@@ -7,7 +7,7 @@ import LoginForm from '../forms/LoginForm';
 import RegisterForm from '../forms/RegisterForm';
 import ConfirmRegistrationForm from '../forms/ConfirmRegistrationForm';
 import ForgotPasswordForm from '../forms/ForgotPasswordForm';
-import { CognitoAuthorizer } from '../../../utils/CognitoUtil';
+import CognitoAuthorizer from '../../../utils/CognitoAuthorizer';
 
 
 const snackbarDelay = 3 * 1000;
@@ -53,7 +53,7 @@ class AuthenticationDialog extends Component {
 
 
   getSession() {
-    const cognitoAuthorizer = new CognitoAuthorizer();
+    const cognitoAuthorizer = CognitoAuthorizer();
     this.setState({ cognitoAuthorizer });
     if (window.location.href.match(/.*?code=(.*)$/)) {
       cognitoAuthorizer.parseUrlCode(window.location.href)

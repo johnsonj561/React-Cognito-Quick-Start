@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import Button from 'material-ui/Button';
 import { TextField } from 'material-ui';
 import Typography from 'material-ui/Typography';
-import getInputError from '../../../../utils/InputValidationUtil';
-import { getCurrentAuthorizer } from '../../../../utils/CognitoUtil';
+import Validator from '../../../../utils/Validator';
+import CognitoAuthorizer from '../../../../utils/CognitoAuthorizer';
 
 
 const getDefaultState = () => ({
@@ -54,7 +54,7 @@ class ConfirmRegistrationForm extends Component {
     const { id, value } = target;
     const { formData, formErrors } = this.state;
     formData[id] = value;
-    formErrors[id] = getInputError[id](value);
+    formErrors[id] = Validator[id](value);
     this.setState({ formData, formErrors });
   }
 
@@ -68,7 +68,7 @@ class ConfirmRegistrationForm extends Component {
     const { confirmationCode } = formData;
     let errorCount = 0;
     Object.keys(formData).forEach((key) => {
-      formErrors[key] = getInputError[key](formData[key]);
+      formErrors[key] = Validator.getValidationError[key](formData[key]);
       errorCount += (formErrors[key]) ? 1 : 0;
     });
     if (!errorCount) {
@@ -87,7 +87,7 @@ class ConfirmRegistrationForm extends Component {
 
   resendConfirmation() {
     this.toggleConfirmationText(true);
-    getCurrentAuthorizer().resendConfirmationCode()
+    CognitoAuthorizer().resendConfirmationCode()
       .then(() => this.toggleConfirmationText());
   }
 

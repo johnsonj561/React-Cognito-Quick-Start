@@ -28,7 +28,6 @@ class TodoListTableRow extends Component {
   render() {
     const { todoItem, onRowClick } = this.props;
     const { status, name, createDateString } = todoItem;
-    console.log(status);
     return (
       <TableRow hover onClick={() => onRowClick(todoItem)}>
 

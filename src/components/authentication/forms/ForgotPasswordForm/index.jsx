@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Button from 'material-ui/Button';
 import { TextField } from 'material-ui';
 import Typography from 'material-ui/Typography';
-import getInputError from '../../../../utils/InputValidationUtil';
+import Validator from '../../../../utils/Validator';
 import './style.css';
 
 
@@ -41,7 +41,7 @@ class ForgotPasswordForm extends Component {
     const { id, value } = target;
     const { formData, formErrors } = this.state;
     formData[id] = value;
-    formErrors[id] = getInputError[id](value);
+    formErrors[id] = Validator.getValidationError[id](value);
     this.setState({ formData, formErrors });
   }
 
@@ -49,7 +49,7 @@ class ForgotPasswordForm extends Component {
   handleNewPasswordRequest() {
     const { formData, formErrors } = this.state;
     const { email } = formData;
-    formErrors.email = getInputError.email(email);
+    formErrors.email = Validator.getValidationError.email(email);
     if (formErrors.email) {
       this.setState({ formErrors });
     } else {
@@ -62,7 +62,7 @@ class ForgotPasswordForm extends Component {
     const { formData, formErrors } = this.state;
     let errorCount = 0;
     Object.keys(formData).forEach((key) => {
-      formErrors[key] = getInputError[key](formData[key]);
+      formErrors[key] = Validator.getValidationError[key](formData[key]);
       errorCount += (formErrors[key]) ? 1 : 0;
     });
     if (!errorCount) {
