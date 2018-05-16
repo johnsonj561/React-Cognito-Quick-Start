@@ -5,6 +5,7 @@
  * @param {Array} props array of object properties to search
  * @param {String} query the phrase to be searched for
  */
+// side note - refactor to this to maps and filters because that would be cooler
 const searchObjectList = (list, props, query) => {
   const results = [];
   const n = props.length;
