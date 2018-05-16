@@ -98,6 +98,9 @@ class AuthenticationDialog extends Component {
       case 'InvalidPasswordException':
         this.setState({ errors: { passwordError: 'Invalid password' } });
         return;
+      case 'CodeMismatchException':
+        this.setState({ errors: { passwordError: 'Invalid Code' } });
+        return;
       default:
         this.setState({ errors: { passwordError: 'Unexpected error' } });
     }
