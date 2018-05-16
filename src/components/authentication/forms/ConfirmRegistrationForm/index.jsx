@@ -54,7 +54,7 @@ class ConfirmRegistrationForm extends Component {
     const { id, value } = target;
     const { formData, formErrors } = this.state;
     formData[id] = value;
-    formErrors[id] = Validator[id](value);
+    formErrors[id] = Validator.getValidationError[id](value);
     this.setState({ formData, formErrors });
   }
 
