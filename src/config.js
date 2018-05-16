@@ -38,7 +38,7 @@ const COGNITO_SCOPE = ['email', 'openid'];
 // to identity provider for authentication purposes
 // identify provider returns credentials to cognito
 // cognito then returns auth code to app as a url param
-export const COGNITO_ID_PROVIDER_URL = `https://${COGNITO_APP_DOMAIN}/oauth2/authorize?redirect_uri=${COGNITO_REDIRECT_URI}&response_type=code&client_id=${COGNITO_APP_ID}&identity_provider=${COGNITO_ID_PROVIDER}`;
+const COGNITO_ID_PROVIDER_URL = `https://${COGNITO_APP_DOMAIN}/oauth2/authorize?redirect_uri=${COGNITO_REDIRECT_URI}&response_type=code&client_id=${COGNITO_APP_ID}&identity_provider=${COGNITO_ID_PROVIDER}`;
 
 
 export default {
@@ -47,5 +47,5 @@ export default {
   COGNITO_APP_DOMAIN,
   COGNITO_REDIRECT_URI,
   COGNITO_SCOPE,
-  COGNITO_ID_PROVIDER_URL,
+  COGNITO_ID_PROVIDER_URL
 };
